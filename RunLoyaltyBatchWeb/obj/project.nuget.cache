@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "aRQh5y0CQii0G4fb4DGVb+5/fkZ/v9XJ0rhvzKJ9nT3waK4bqD2zY8mLgkZ67vzbLbciOhc/VunGLv6SGHMs+g==",
+  "success": true,
+  "projectFilePath": "/Users/11356979/Desktop/RunLoyaltyBatchWeb/RunLoyaltyBatchWeb/RunLoyaltyBatchWeb.csproj",
+  "expectedPackageFiles": [
+    "/Users/11356979/.nuget/packages/jquery/3.6.4/jquery.3.6.4.nupkg.sha512",
+    "/Users/11356979/.nuget/packages/jquery.ui.combined/1.13.2/jquery.ui.combined.1.13.2.nupkg.sha512"
+  ],
+  "logs": []
+}

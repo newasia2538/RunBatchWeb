@@ -1,0 +1,70 @@
+﻿@model RunLoyaltyBatchWeb.Models.BatchEntity
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    var data = (BatchEntity)ViewData["BatchEntity"];
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div class="text-center">
+        <label>Please Select Date : </label>
+        @Html.EditorFor(data => data.SelectedDate, new { htmlAttributes = new { @class = "datepicker"} })
+
+        <p>
+            <h3> @data.SelectedDate?.ToString("dd/MM/yyyy") </h3>
+            <h3> @data.BatchSelected.ToString()</h3>
+        </p>
+
+        <div class="row text-left">
+            <div class="col-sm">
+                @Html.RadioButtonFor(data => data.BatchSelected, 1, new { id = "BatchCalculatePointKSG", @title = "1. BatchCalculatePointKSG" })
+                @Html.Label("BatchCalculatePointKSG", "1. BatchCalculatePointKSG", new { @title = "1. BatchCalculatePointKSG", @for = "BatchCalculatePointKSG" })
+                <br>
+                @Html.RadioButtonFor(data => data.BatchSelected, 2, new { id = "TracePlan", @title = "2. TracePlan" })
+                @Html.Label("TracePlan", "2. TracePlan", new { @title = "2. TracePlan", @for = "TracePlan" })
+                <br>
+                @Html.RadioButtonFor(data => data.BatchSelected, 3, new { id = "SendTracePlan", @title = "3. BAY.KMA.Agent.SendTracePlan" })
+                @Html.Label("SendTracePlan", "3. BAY.KMA.Agent.SendTracePlan", new { @title = "3. BAY.KMA.Agent.SendTracePlan", @for = "SendTracePlan" })
+                <br>
+                @Html.RadioButtonFor(data => data.BatchSelected, 4, new { id = "BatchInterfaceBZB", @title = "4. BatchInterfaceBZB(LEAN_FILE)" })
+                @Html.Label("BatchInterfaceBZB", "4. BatchInterfaceBZB(LEAN_FILE)", new { @title = "4. BatchInterfaceBZB(LEAN_FILE)", @for = "BatchInterfaceBZB" })
+                <br>
+                @Html.RadioButtonFor(data => data.BatchSelected, 5, new { id = "PutLoyalty", @title = "5. PutLoyalty" })
+                @Html.Label("PutLoyalty", "5. PutLoyalty", new { @title = "5. PutLoyalty", @for = "PutLoyalty" })
+                <br>
+
+            </div>
+            <div class="col-sm">
+                @Html.RadioButtonFor(data => data.BatchSelected, 6, new { id = "BatchInterfaceBZBCampaign", @title = "6. BatchInterfaceBZBCampaign" })
+                @Html.Label("BatchInterfaceBZBCampaign", "6. BatchInterfaceBZBCampaign", new { @title = "6. BatchInterfaceBZBCampaign", @for = "BatchInterfaceBZBCampaign" })
+                <br>
+                @Html.RadioButtonFor(data => data.BatchSelected, 7, new { id = "PutLoyaltyCampaign", @title = "7. PutLoyaltyCampaign" })
+                @Html.Label("PutLoyaltyCampaign", "7. PutLoyaltyCampaign", new { @title = "7. PutLoyaltyCampaign", @for = "PutLoyaltyCampaign" })
+                <br>
+                @Html.RadioButtonFor(data => data.BatchSelected, 8, new { id = "WinnerListAgent", @title = "8. WinnerListAgent" })
+                @Html.Label("WinnerListAgent", "8. WinnerListAgent", new { @title = "8. WinnerListAgent", @for = "WinnerListAgent" })
+                <br>
+                @Html.RadioButtonFor(data => data.BatchSelected, 9, new { id = "SentPoint", @title = "9. SentPoint" })
+                @Html.Label("SentPoint", "9. SentPoint", new { @title = "9. SentPoint", @for = "SentPoint" })
+                <br>
+            </div>
+        </div>
+
+        <div>
+            <input type="submit" value="RUN" class="btn btn-primary" id="submitbtn" onclick="location.href='@Url.Action("Index", "Home", @data as BatchEntity)'">
+        </div>
+    </div>
+}
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+
+        });
+    </script>
+}
